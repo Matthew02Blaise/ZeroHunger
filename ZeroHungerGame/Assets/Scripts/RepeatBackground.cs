@@ -7,7 +7,7 @@ public class RepeatBackground : MonoBehaviour
     [SerializeField] private float scrollSpeed = 2f;
 
     private Vector3 startPos;
-    private float repeatWidth;
+    private float repeatHeight;
 
     private SpriteRenderer _sr;
 
@@ -16,16 +16,16 @@ public class RepeatBackground : MonoBehaviour
         startPos = transform.position;
         _sr = GetComponent<SpriteRenderer>();
 
-        repeatWidth = _sr.bounds.size.x;
+        repeatHeight = _sr.bounds.size.y; // Use height instead of width
     }
 
     private void Update()
     {
-        //Move background left
-        transform.Translate(Vector3.left * scrollSpeed * Time.deltaTime);
+        // Move background DOWN
+        transform.Translate(Vector3.down * scrollSpeed * Time.deltaTime);
 
-        //Reset when off screen
-        if (transform.position.x < startPos.x - repeatWidth)
+        // Reset when it goes too far down
+        if (transform.position.y < startPos.y - repeatHeight)
         {
             transform.position = startPos;
         }
