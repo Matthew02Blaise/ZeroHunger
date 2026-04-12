@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8135968839789427017}
   - component: {fileID: 7123661888864398487}
   - component: {fileID: 8627301007691426497}
+  - component: {fileID: 1943608639841670148}
   m_Layer: 0
   m_Name: Pumpkin_Dead
   m_TagString: Untagged
@@ -114,7 +115,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -130,3 +131,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 1.1}
   m_EdgeRadius: 0
+--- !u!114 &1943608639841670148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976740435988448185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f79d38b7912579444a4f503b28740c58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 6
+  destroyY: -7
+  scoreValue: 10
+  hungerValue: 0.1
+  isBadFood: 1
