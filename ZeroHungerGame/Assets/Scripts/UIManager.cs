@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+// This script manages the UI elements of the game, including score display, hunger bar, and damage flash effect
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
@@ -41,12 +42,12 @@ public class UIManager : MonoBehaviour
         UpdateHungerUI();
     }
 
+    // This method is called when the player picks up food, updating score and hunger values accordingly
     public void AddFood(int scoreAmount, float hungerAmount)
     {
         score += scoreAmount;
         hunger += hungerAmount;
 
-        // If bad food (negative values), trigger flash
         if (scoreAmount < 0 || hungerAmount < 0)
         {
             StartCoroutine(FlashRed());
@@ -55,7 +56,7 @@ public class UIManager : MonoBehaviour
         score = Mathf.Max(0, score);
         hunger = Mathf.Clamp01(hunger);
 
-        // Check if hunger is full
+        // Check if hunger bar is full and load next scene if it is
         if (hunger >= 1f)
         {
             LoadNextScene();
@@ -87,12 +88,12 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
+    // This coroutine handles the red flash effect when the player takes damage from bad food
     private IEnumerator FlashRed()
     {
         if (damageFlashImage == null)
             yield break;
 
-        // Set visible red
         Color color = damageFlashImage.color;
         color.a = flashAlpha;
         damageFlashImage.color = color;
@@ -103,6 +104,7 @@ public class UIManager : MonoBehaviour
         float t = 0f;
         float startAlpha = flashAlpha;
 
+        // Fade the red flash out over time
         while (t < flashDuration)
         {
             t += Time.deltaTime;

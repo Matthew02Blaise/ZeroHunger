@@ -981,7 +981,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Swipe left and right to move. Collect the ripe foods to build score and
-    hunger. Fill the hunger bar to win!
+    hunger, while avoiding the bad food. Fill the hunger bar to win!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

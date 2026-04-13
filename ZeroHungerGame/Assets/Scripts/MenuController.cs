@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// This script manages the menu interactions, including starting the game, opening the about page, pausing/resuming the game, and quitting the game
 public class MenuController : MonoBehaviour
 {
     [Header("Scene Names")]
@@ -51,6 +52,13 @@ public class MenuController : MonoBehaviour
             pausePanel.SetActive(false);
     }
 
+    public void LoadNextScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex + 1);
+    }
+
+    // This method opens the UN's hunger page in the users web browser
     public void OpenWebsite()
     {
         Application.OpenURL("https://www.un.org/sustainabledevelopment/hunger/");

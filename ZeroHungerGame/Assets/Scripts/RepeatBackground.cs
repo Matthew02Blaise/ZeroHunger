@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// This script creates a repeating background by moving the background downwards and resetting its position when it goes too far
 public class RepeatBackground : MonoBehaviour
 {
     [SerializeField] private float scrollSpeed = 2f;
